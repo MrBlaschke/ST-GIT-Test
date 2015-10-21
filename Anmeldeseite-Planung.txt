@@ -1,0 +1,24 @@
+
+
+unique_id = Der einmalige Identifier für jeden User der sich anmeldet. Wird automatisch bei der Registrierung erstellt. Man kann ihn auch vorbelegen indem man die Seite mit dem Parameter 'uid_plk' vorgibt.
+So kann man bei einer zweiten Registrierungsphase den Zusammenhang zum ersten Benutzer herstellen - das ist zumindest der Plan.
+
+Value-Definition in BreezingForms:
+<?php if($_GET["uid_plk"] != "") {return $_GET["uid_plk"];}else{return uniqid();} ?>
+
+Manuelles setzen der unique_id:
+http://ladenbau-v1:8888/test1?uid_plk=HossaHossa
+
+
+-------
+
+
+Aufrufen der Liste 1 direkt, ohne weiteres Joomla-Gedöns:
+http://ladenbau-v1:8888/?option=com_contentbuilder&view=list&id=3&tmpl=component
+
+Ein einziger Anmeldedatensatz:
+http://ladenbau-v1:8888/component/contentbuilder/details/3/9/anmeldung-phase-1-paul?Itemid=0&tmpl=component
+
+Editierbarer Eintrag Direktaufruf:
+http://ladenbau-v1:8888/component/contentbuilder/edit/3/9/entry?tmpl=component&Itemid=2
+
